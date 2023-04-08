@@ -9,10 +9,10 @@ runs-on: ubuntu-latest
 steps :
 - name: Checkout
 uses: actions/checkout@master
-name: Build and Deploy
+- name: Build and Deploy
 uses: JamesIves/github-pages-deploy-action@master
 env :
-ACCESS TOKEN: ${{secrets.ACCESS_TOKEN }}
+ACCESS TOKEN: ${{ secrets.ACCESS_TOKEN }}
 BRANCH: gh-pages
 FOLDER: dist
 BUILD SCRIPT: npm install && npm run build
