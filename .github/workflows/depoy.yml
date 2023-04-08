@@ -1,0 +1,19 @@
+name: myDemo
+on:
+push:
+branches:
+- master
+jobs :
+build-and-deploy:
+runs-on: ubuntu-latest
+steps :
+- name: Checkout
+uses: actions/checkout@master
+name: Build and Deploy
+uses: myAnimation/github-pages-deploy-action@master
+env :
+ACCESS TOKEN: ${{secrets.ACCESS_TOKEN }}
+BRANCH: gh-pages
+FOLDER: dist
+BUILD SCRIPT: npm install && npm run build
+# https://github.com/marketplace/actions/deploy-to-github-pages
